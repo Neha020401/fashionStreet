@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+  margin: 2px;
+  padding: 2px;
+}
+
+.logo  a{
+  font-family: 'Pixelify Sans', cursive;
+  font-size: 30px;
+  text-decoration: none;
+}
