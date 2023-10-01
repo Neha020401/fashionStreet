@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Fragment } from 'react'
 import { Link, Outlet } from 'react-router-dom';
-import SignIn from '../SignIn/SignIn';
+import SignIn from '../SignIn/SignUp';
 
 
 const Navbar = () => {
