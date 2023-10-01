@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../utils/Firebase";
+import "../SassStyling/SignIn.scss"
 import FormInput from "./FormInput";
+import Button from "../Button";
 
 const defaultFormField = {
   displayName: '',
@@ -52,12 +54,13 @@ const SignIn = () => {
 
 
   return (
-    <div >
-
+    <div className="sign-up-container">
+      <h2>Don't have an Account</h2>
+      <span> Sign up with your email and password</span>
       <form onSubmit={handleSubmit} >
 
-        <FormInput 
-        label="DisplayName "
+        <FormInput
+          label="DisplayName "
           type="text"
           required
           onChange={handleChange}
@@ -89,7 +92,7 @@ const SignIn = () => {
           value={confirmPassword} />
 
         <div>
-          <button type="submit"> Submit</button>
+          <Button type="submit"> Submit</Button>
         </div>
       </form>
     </div>

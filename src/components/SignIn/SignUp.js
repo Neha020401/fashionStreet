@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import {  signInWithGooglePopup, createUserDocumentFromAuth } from '../utils/Firebase';
 import SignIn from './SignIn.component';
 import "../SassStyling/SignIn.scss"
+import Button from '../Button';
 
 const SignUp = () => {
 
@@ -41,7 +42,8 @@ const SignUp = () => {
               <div>PassWord:-  <input type="password" /> </div>
               <div> <button>Sign in</button> </div>
               <p>Login btn</p>
-      <button onClick={logGoogleUser}>Sign in with Google Popup</button>
+    <Button  buttonType='google' onClick={logGoogleUser}>Sign in with Google Popup</Button>
+    
       </fieldset>
       </div>
 
