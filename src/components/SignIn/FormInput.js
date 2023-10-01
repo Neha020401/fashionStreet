@@ -1,11 +1,17 @@
 import React from 'react'
+import "../SassStyling/FormInput.scss"
 
-const FormInput = ({label,...otherInput}) => {
+const FormInput = ({ label, ...otherProps }) => {
   return (
-      <div>
-      <label>{label}</label>
-      <input {...otherInput}/>
-      </div>
+    <div className='group'>
+      {label &&
+        <label
+          className={`${otherProps.value.length ? "srink" : ""}
+           form-input-label`}
+        >{label}</label>
+      }
+      <input className='form-input' {...otherProps} />
+    </div>
   )
 }
 

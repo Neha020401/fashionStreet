@@ -21,13 +21,12 @@ const SignIn = () => {
     console.log(userDocRef)
   };
 
-  
 
   return (
     <Fragment>
     <div className='SignIn'>
       <p>This is signin page</p>
-      <div style={{alignItems:'center',textAlign:'center',display:'grid',justifyContent:'center',gridAutoFlow:'column',gap:'10px'}}>
+      <div>
       <div className="crossdiv">
         <Link to="/">
           <div className="crossone" />

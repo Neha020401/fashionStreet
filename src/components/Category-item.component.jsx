@@ -1,4 +1,4 @@
-import './Categories.scss';
+import '../components/SassStyling/Categories.scss'
 
 const CategoryItem = () => {
     const categories = [
