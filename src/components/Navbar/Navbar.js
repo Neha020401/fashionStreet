@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { Fragment } from 'react'
 import { Link, Outlet } from 'react-router-dom';
-import SignIn from '../SignIn/SignUp';
+import Authentication from '../SignIn/Authentication';
+
 
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
         <Link to='cart'><li>Cart</li></Link>
         <Link to='shop'><li>Shop</li></Link>
          <Link to='signin'><li onClick={pageChange}>Sign in
-         {signInPage && <SignIn/>}
+         {signInPage && <Authentication/>}
         </li></Link>
 
       </ul>

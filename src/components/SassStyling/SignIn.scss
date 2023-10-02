@@ -20,24 +20,15 @@ body {
     justify-content: center;
     margin: auto ;
   }
-  .crossone{
-  background-color: red;
-  width: 20px;
-  height: 3px;
-  border-radius: 8px;
-  transform: rotate(35deg);
-  }
-  
-  .crosstwo{
-    background-color: red;
-    width: 20px;
-    height: 3px;
-    border-radius: 8px;
-    transform: rotateZ(-50deg);
-    }
-  
-    .crossdiv{
-      margin: auto;
+
+    
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+      color: red;
     }
 
 
