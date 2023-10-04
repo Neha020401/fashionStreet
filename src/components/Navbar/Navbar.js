@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import { Fragment } from 'react'
 import { Link, Outlet } from 'react-router-dom';
-import Authentication from '../SignIn/Authentication';
-
+import Authentication from '../Routes/SignIn/Authentication';
 
 
 const Navbar = () => {
