@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import {UserContext} from '../../../Context/Contexts'
 import {
   createUserDocumentFromAuth,
   signInWithGooglePopup,
@@ -13,11 +14,12 @@ const defaultFormField = {
   password: '',
 }
 
-
-
 const SignIn = () => {
+
   const [formField, setFormField] = useState(defaultFormField)
   const { email, password } = formField;
+
+  const {setCurrentUser} = useContext(UserContext)
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
@@ -45,8 +47,8 @@ const SignIn = () => {
     }
 
     try {
-      const respone = await signInUserWithEmailAndPassword(email, password)
-      console.log(respone)
+      const { user }= await signInUserWithEmailAndPassword(email, password)
+      setCurrentUser(user);
       resetFormField();
 
     } catch (error) {
@@ -86,7 +88,7 @@ const SignIn = () => {
           value={password} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: '5px' }}>
-          <Button type="submit"> Submit</Button>
+          <Button type="submit">Submit</Button>
           <Button type="button" buttonType='google' onClick={logGoogleUser}>Google signin</Button>
         </div>
       </form>

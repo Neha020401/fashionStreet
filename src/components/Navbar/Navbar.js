@@ -1,33 +1,35 @@
-import React, {useState} from 'react'
-import { Fragment } from 'react'
+import React, { useState } from 'react'
+import { Fragment, useContext } from 'react'
+import { UserContext } from '../../Context/Contexts';
 import { Link, Outlet } from 'react-router-dom';
-import Authentication from '../Routes/SignIn/Authentication';
-
+import { signOutUser } from '../utils/Firebase';
 
 const Navbar = () => {
- const [signInPage, setSignInPage] = useState(false)
+  const { currentUser } = useContext(UserContext)
+  console.log(currentUser)
 
- const pageChange = ()=>{
-  setSignInPage(true)
- }
-
+  const signOutHandler = async() =>{
+const res = await signOutUser()
+console.log(res)
+  }
   return (
     <Fragment>
       <div className='logo'>
-      <Link to='/'>     
-        LoGo
-      </Link> 
+        <Link to='/'>
+          LoGo
+        </Link>
       </div>
-      <ul  style={{listStyle:'none',display:'flex',gap:'20px'}}> 
-         <Link to='/'><li>Home</li></Link>
+      <ul style={{ listStyle: 'none', display: 'flex', gap: '20px' }}>
+        <Link to='/'><li>Home</li></Link>
         <Link to='cart'><li>Cart</li></Link>
         <Link to='shop'><li>Shop</li></Link>
-         <Link to='signin'><li onClick={pageChange}>Sign in
-         {signInPage && <Authentication/>}
-        </li></Link>
-
+        <li>
+          {currentUser ?
+            (<span onClick={signOutHandler}>Sign Out </span>) :
+            (<Link to='signin'> <span >Sign in</span>  </Link>)}
+        </li>
       </ul>
-      <Outlet/>
+      <Outlet />
     </Fragment>
   )
 }

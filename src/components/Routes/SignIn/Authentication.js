@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import SignIn from '../SignIn/SignIn.component'
 import "../../SassStyling/SignIn.scss"
 import SignUp from "../SignIn/SignUpForm"
-const Authentication = () => {
 
- 
+const Authentication = () => {
 
   return (
     <div className='signInContainer'>
